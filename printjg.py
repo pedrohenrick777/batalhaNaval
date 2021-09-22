@@ -38,7 +38,10 @@ def printTeste(abcd, t1, t2, t11, t22):
         print()
 
 def printJogo(abcd, t11, t22):
-    os.system('clear')
+    if os.name == 'nt':
+        os.system('cls')
+    else:
+        os.system('clear')
     
     print(''' 
             Jogador 1                                 Jogador 2
