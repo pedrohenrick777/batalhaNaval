@@ -8,46 +8,26 @@ def tabuleiro(qtdNav):
         j = randint(0, 9)
         k = randint(0, 9)
 
-        if j == 0:
-            if k == 0:
-                if tab[j][k] == '-' and tab[j][k+1] == '-' and tab[j+1][k] == '-' and tab[j+1][k+1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-            elif k == 9:
-                if tab[j][k] == '-' and tab[j][k-1] == '-' and tab[j+1][k] == '-' and tab[j+1][k-1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-            else:
-                if tab[j][k] == '-' and tab[j][k-1] == '-' and tab[j+1][k] == '-' and tab[j+1][k-1] == '-' and  tab[j][k+1] == '-' and tab[j+1][k+1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-        elif k == 0:
-            if j == 9:
-                if tab[j][k] == '-' and tab[j-1][k] == '-' and tab[j][k+1] == '-' and tab[j-1][k+1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-            else:
-                if tab[j][k] == '-' and tab[j-1][k] == '-' and tab[j][k+1] == '-' and tab[j-1][k+1] == '-' and tab[j+1][k] == '-' and tab[j+1][k+1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1                    
-        elif j == 9:
-            if k == 9:
-                if tab[j][k] == '-' and tab[j-1][k] == '-' and tab[j-1][k-1] == '-' and tab[j][k-1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-            else:
-                if tab[j][k] == '-' and tab[j-1][k] == '-' and tab[j][k+1] == '-' and tab[j][k-1] == '-' and tab[j-1][k+1] == '-' and tab[j-1][k-1] == '-':
-                    tab[j][k] = 'N'
-                    cont += 1
-        elif k == 9:
-            if tab[j][k] == '-' and tab[j][k-1] == '-' and tab[j-1][k] == '-' and tab[j+1][k] == '-' and tab[j+1][k-1] == '-' and tab[j-1][k-1] == '-':
-                tab[j][k] = 'N'
-                cont += 1
-        else:
-            if tab[j][k] == '-' and tab[j][k-1] == '-' and tab[j-1][k] == '-' and tab[j+1][k] == '-' and tab[j+1][k-1] == '-' and tab[j-1][k-1] == '-' and tab[j-1][k+1] == '-' and tab[j][k+1] == '-' and tab[j+1][k+1] == '-':
-                tab[j][k] = 'N'
-                cont += 1
-    
+        if j>0 and k>0 and tab[j][k] == 'N':
+            continue
+        if j>0 and tab[j][k] == 'N':
+            continue
+        if j>0 and k<9 and tab[j][k] == 'N':
+            continue
+        if k>0 and tab[j][k] == 'N':
+            continue
+        if tab[j][k] == 'N':
+            continue
+        if k<9 and tab[j][k] == 'N':
+            continue
+        if j<9 and k>0 and tab[j][k] == 'N':
+            continue
+        if j<9 and tab[j][k] == 'N':
+            continue
+        if j<9 and k<9 and tab[j][k] == 'N':
+            continue
+        tab[j][k] = 'N'
+        cont += 0
     return tab
 
 def tabuleiro2():
