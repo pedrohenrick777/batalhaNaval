@@ -1,5 +1,6 @@
 from jogo import novoJogo
 import os
+import time
 
 while True:
     if os.name == 'nt':
@@ -15,7 +16,6 @@ while True:
         novoJogo()
     elif nv == 2:
         break
-
-
-
-
+    else:
+        print('Erro')
+        time.sleep(1)
