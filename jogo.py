@@ -102,7 +102,7 @@ def tiro(tabu, linha, coluna):
         return False
 
 
-def resul_tiro(tabu, tabul, linha, coluna, cont, pontuacaoP):
+def resul_tiro(tabu, tabul, linha, coluna,):
     if tabu[linha][coluna] == 'F' or tabu[linha][coluna-1] == 'A':
         print('JÁ JOGADO - PERDEU A VEZ')
         time.sleep(2)
