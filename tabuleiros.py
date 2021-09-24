@@ -1,10 +1,17 @@
 from random import randint
 
-
-def tabuleiro(qtdNav):
+#Função que cria os tabuleiros
+def tabuleiro():
     tab = [['-']*10 for i in range(10)]
-    cont = 0
 
+    return tab
+
+#Função que distribui os navios no tabuleiro de frotas
+def frotas(tabu, qtdNav):
+    cont = 0
+    tab = tabu
+
+    #Impede que os navios incostem uns nos outros
     while cont < qtdNav:
         j = randint(0, 9)
         k = randint(0, 9)
@@ -29,10 +36,4 @@ def tabuleiro(qtdNav):
             continue
         tab[j][k] = 'N'
         cont += 1
-    return tab
-
-
-def tabuleiro2():
-    tab = [['-']*10 for i in range(10)]
-
     return tab
