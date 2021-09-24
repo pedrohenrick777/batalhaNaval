@@ -45,7 +45,7 @@ def novoJogo():
             print('JOGADOR 2 GANHOU!!')
             time.sleep(10)
             break
-
+        print(cont)
         if cont % 2 != 0:
             print('-Jogador 1-')
             while True:
@@ -65,20 +65,10 @@ def novoJogo():
             linha = ord(linha) - 65
             coluna -= 1
 
-            if tabuP22[linha][coluna] == 'F' or tabuP22[linha][coluna] == 'A':
-                print('JÁ BOMBARDEADO - PERDEU A VEZ')
-                cont += 1
-                time.sleep(2)
-            elif tiro(tabuP2, linha, coluna):
-                tabuP22[linha][coluna] = 'F'
-                print('FOGO - SUA VEZ NOVAMENTE')
+            if resul_tiro(tabuP22, tabuP2, linha, coluna, cont, pontuacaoP1):
                 pontuacaoP1 += 1
-                time.sleep(2)
             else:
-                tabuP22[linha][coluna] = 'A'
-                print('ÁGUA - PERDEU A VEZ')
                 cont += 1
-                time.sleep(2)
         else:
             print('-Jogador 2-')
             while True:
@@ -98,20 +88,10 @@ def novoJogo():
             linha = ord(linha) - 65
             coluna -= 1
 
-            if tabuP11[linha][coluna] == 'F' or tabuP11[linha][coluna-1] == 'A':
-                print('JÁ JOGADO - PERDEU A VEZ')
-                cont += 1
-                time.sleep(2)
-            elif tiro(tabuP1, linha, coluna):
-                tabuP11[linha][coluna] = 'F'
-                print('FOGO - SUA VEZ NOVAMENTE')
+            if resul_tiro(tabuP11, tabuP1, linha, coluna, cont, pontuacaoP2):
                 pontuacaoP2 += 1
-                time.sleep(2)
             else:
-                tabuP11[linha][coluna] = 'A'
-                print('ÁGUA - PERDEU A VEZ')
                 cont += 1
-                time.sleep(2)
 
 
 def tiro(tabu, linha, coluna):
@@ -122,18 +102,18 @@ def tiro(tabu, linha, coluna):
         return False
 
 
-def resul_tiro():
-    if tabuP11[linha][coluna] == 'F' or tabuP11[linha][coluna-1] == 'A':
+def resul_tiro(tabu, tabul, linha, coluna, cont, pontuacaoP):
+    if tabu[linha][coluna] == 'F' or tabu[linha][coluna-1] == 'A':
         print('JÁ JOGADO - PERDEU A VEZ')
-        cont += 1
         time.sleep(2)
-    elif tiro(tabuP1, linha, coluna):
-        tabuP11[linha][coluna] = 'F'
+        return False
+    elif tiro(tabul, linha, coluna):
+        tabu[linha][coluna] = 'F'
         print('FOGO - SUA VEZ NOVAMENTE')
-        pontuacaoP2 += 1
         time.sleep(2)
+        return True
     else:
-        tabuP11[linha][coluna] = 'A'
+        tabu[linha][coluna] = 'A'
         print('ÁGUA - PERDEU A VEZ')
-        cont += 1
         time.sleep(2)
+        return False
