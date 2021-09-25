@@ -4,14 +4,12 @@ import os
 def printTeste(t1, t2):
 
     print()
-    print_escopo()#Printa o escopo
     print_mapa(t1, t2)#Printa o tabuleiro de frota do Jogadore 1 e Jogadore 2
 
 #Função que exibe os tabuleiros de jogo
 def printJogo(t11, t22, pontuacaoP1, pontuacaoP2):
     limpar_tela()
 
-    print_escopo()#Printa o escopo
     print_mapa(t11, t22)#Printa o tabuleiro do Jogadore 1 e Jogadore 2
     print()
     #Exibe a pontuação dos jogadores
@@ -24,6 +22,12 @@ def print_mapa(tab, tabu):
     #Vetor usado para indicar qual é a linha do tabuleiro
     abcd = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
+    #Printa os escopos dos tabuleiros
+    print(''' 
+            Jogador 1                                 Jogador 2
+   |1  2  3  4  5  6  7  8  9  10           |1  2  3  4  5  6  7  8  9  10
+---------------------------------        ---------------------------------''')
+
     for i in range(10):
         print(f'{abcd[i]}  |', end='')
         for j in range(10):
@@ -35,12 +39,7 @@ def print_mapa(tab, tabu):
             print(f'{tabu[i][k]:3}', end='')
         print()
 
-#Função que printa os escopos dos tabuleiros
-def print_escopo():
-    print(''' 
-            Jogador 1                                 Jogador 2
-   |1  2  3  4  5  6  7  8  9  10           |1  2  3  4  5  6  7  8  9  10
----------------------------------        ---------------------------------''')
+
 
 #Função para limpar a tela
 def limpar_tela():
