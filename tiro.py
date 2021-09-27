@@ -33,7 +33,7 @@ def tiro():
 def resul_tiro(tabu, tabul, linha, coluna):
     #Testa se o local digitado já foi bombardeado, se sim, retorna False, passando a vez pro jogador
     if tabul[linha][coluna] == 'F' or tabul[linha][coluna] == 'A':
-        print('JÁ JOGADO - PERDEU A VEZ')
+        print('JÁ BOMBARDEADO - PERDEU A VEZ')
         time.sleep(2)
         return False
     #Testa se o local digitado é um Navio, se sim, retorna True, e a vez continua sendo do mesmo jogador
