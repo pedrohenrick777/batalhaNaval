@@ -1,6 +1,6 @@
 import os
 
-#{{Pedro P.}}
+#{{Pedro H.}}
 #Função que exibe o tabuleiro de frotas(TESTE)
 def print_test(tabTP1, tabTP2):
 

@@ -3,7 +3,7 @@ from printjg import print_test, print_game, clean_screen
 from tiro import result_shot, shot
 import time
 
-#{{Pedro H.}}
+#{{Pedro P.}}
 def new_game():
     clean_screen()
 
