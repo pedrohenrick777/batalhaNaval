@@ -11,7 +11,7 @@ def frotas(tabu, qtdNav):
     cont = 0
     tab = tabu
 
-    #Impede que os navios incostem uns nos outros
+    #Impede que os navios encostem uns nos outros
     while cont < qtdNav:
         j = randint(0, 9)
         k = randint(0, 9)

@@ -4,13 +4,13 @@ import os
 def printTeste(t1, t2):
 
     print()
-    print_mapa(t1, t2)#Printa o tabuleiro de frota do Jogadore 1 e Jogadore 2
+    print_mapa(t1, t2)#Printa o tabuleiro de frota do Jogador 1 e Jogador 2
 
 #Função que exibe os tabuleiros de jogo
 def printJogo(t11, t22, pontuacaoP1, pontuacaoP2):
     limpar_tela()
 
-    print_mapa(t11, t22)#Printa o tabuleiro do Jogadore 1 e Jogadore 2
+    print_mapa(t11, t22)#Printa o tabuleiro do Jogador 1 e Jogador 2
     print()
     #Exibe a pontuação dos jogadores
     print(f'''

@@ -12,22 +12,21 @@ def tiro():
             break
     #Pergunta e valida a coluna do ataque
     while True:
-        colum = int(input('Qual coluna do seu ataque? '))
-        if colum < 0 or colum > 10:
+        column = int(input('Qual coluna do seu ataque? '))
+        if column < 0 or column > 10:
             print('ERRO')
             continue
         else:
             break
     
     """ 
-    Tranforma a Letra da linha em número de acordo com a tabela ASCII e então diminui o valor de A(65), 
-    assim, quando for digitado: A = 0; B = 1; C = 2... 
+    Tranforma a Letra da linha em número de acordo com a tabela ASCII e então diminui o valor de A(65), assim, quando for digitado: A = 0; B = 1; C = 2... 
     """
     lin = ord(lin) - 65
     #Diminui 1 da coluna, Assim, quando for digitado: 1 = 0; 2 = 1; 3 = 2...
-    colum -= 1
+    column -= 1
 
-    return lin, colum
+    return lin, column
 
 #Função que retorna o resultado do ataque
 def resul_tiro(tabu, tabul, linha, coluna):

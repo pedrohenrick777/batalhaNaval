@@ -16,6 +16,7 @@ while True:
     if nv == 1:
         novoJogo()
     elif nv == 2:
+        print('Programa Encerrado')
         break
     else:
         #caso seja digitado um número inválido

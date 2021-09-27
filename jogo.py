@@ -34,11 +34,11 @@ def novoJogo():
     cont = 1
     #Opção de para ativar a exibição do tabuleiro de frotas dos usuários (APENAS PARA TESTE)
     teste = input(
-        'Deseja mostrar as frotas(Função de Teste)?[S ou N] ').upper()
+        'Deseja mostrar as frotas(Função de Teste)?[Sim ou Não] ').upper()
 
     while True:
         #Valida se deve ser exibido o tabuleiro de frotas ou não
-        if teste == 'S':
+        if teste == 'SIM':
             printJogo(tabuP11, tabuP22, pontuacaoP1, pontuacaoP2)
             printTeste(tabuP1, tabuP2)
         else:
@@ -59,7 +59,7 @@ def novoJogo():
         if cont % 2 != 0:
             print('-Jogador 1-')
             
-            #Pega qual a linha e coluna que o jogador que jogador
+            #Pega qual linha e coluna o jogador escolheu para atacar
             linha, coluna = tiro()
 
             #Verifica se o jogador acertou um navio
@@ -70,7 +70,7 @@ def novoJogo():
         else:
             print('-Jogador 2-')
 
-            #Pega qual a linha e coluna que o jogador que jogador
+            #Pega qual linha e coluna o jogador escolheu para atacar
             linha, coluna = tiro()
 
             #Verifica se o jogador acertou um navio
