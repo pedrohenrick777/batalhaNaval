@@ -1,5 +1,5 @@
 from printjg import limpar_tela
-from jogo import novoJogo
+from jogo import new_game
 import time
 
 
@@ -14,7 +14,7 @@ while True:
     #Inicia um novo jogo ou fecha o jogo
     nv = int(input(''))
     if nv == 1:
-        novoJogo()
+        new_game()
     elif nv == 2:
         print('Programa Encerrado')
         break

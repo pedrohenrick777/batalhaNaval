@@ -4,7 +4,7 @@ from tiro import resul_tiro, tiro
 import time
 
 
-def novoJogo():
+def new_game():
     limpar_tela()
 
     #Pergunta a quantidade de navios que vai ser usado e valida a resposta
