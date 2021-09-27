@@ -1,39 +1,40 @@
 from random import randint
 
+#{{M. Pedro}}
 #Função que cria os tabuleiros
-def tabuleiro():
-    tab = [['-']*10 for i in range(10)]
+def boards():
+    brd = [['-']*10 for i in range(10)]
 
-    return tab
+    return brd
 
 #Função que distribui os navios no tabuleiro de frotas
-def frotas(tabu, qtdNav):
+def fleets(brd, countShips):
     cont = 0
-    tab = tabu
+    board = brd
 
     #Impede que os navios encostem uns nos outros
-    while cont < qtdNav:
-        j = randint(0, 9)
-        k = randint(0, 9)
+    while cont < countShips:
+        l = randint(0, 9)
+        c = randint(0, 9)
 
-        if j > 0 and k > 0 and tab[j-1][k-1] == 'N':
+        if l > 0 and c > 0 and board[l-1][c-1] == 'N':
             continue
-        if j > 0 and tab[j-1][k] == 'N':
+        if l > 0 and board[l-1][c] == 'N':
             continue
-        if j > 0 and k < 9 and tab[j-1][k+1] == 'N':
+        if l > 0 and c < 9 and board[l-1][c+1] == 'N':
             continue
-        if k > 0 and tab[j][k-1] == 'N':
+        if c > 0 and board[l][c-1] == 'N':
             continue
-        if tab[j][k] == 'N':
+        if board[l][c] == 'N':
             continue
-        if k < 9 and tab[j][k+1] == 'N':
+        if c < 9 and board[l][c+1] == 'N':
             continue
-        if j < 9 and k > 0 and tab[j+1][k-1] == 'N':
+        if l < 9 and c > 0 and board[l+1][c-1] == 'N':
             continue
-        if j < 9 and tab[j+1][k] == 'N':
+        if l < 9 and board[l+1][c] == 'N':
             continue
-        if j < 9 and k < 9 and tab[j+1][k+1] == 'N':
+        if l < 9 and c < 9 and board[l+1][c+1] == 'N':
             continue
-        tab[j][k] = 'N'
+        board[l][c] = 'N'
         cont += 1
-    return tab
+    return board

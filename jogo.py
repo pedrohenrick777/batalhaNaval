@@ -1,17 +1,17 @@
-from tabuleiros import tabuleiro, frotas
-from printjg import printTeste, printJogo, limpar_tela
-from tiro import resul_tiro, tiro
+from tabuleiros import boards, fleets
+from printjg import print_test, print_game, clean_screen
+from tiro import result_shot, shot
 import time
 
-
+#{{Pedro H.}}
 def new_game():
-    limpar_tela()
+    clean_screen()
 
     #Pergunta a quantidade de navios que vai ser usado e valida a resposta
     while True:
-        quantNavios = int(
+        numberShips = int(
             input('Digite a quantidade de navios de cada jogador [Máx = 10]: '))
-        if quantNavios < 0 or quantNavios > 10:
+        if numberShips <= 0 or numberShips > 10:
             print('ERRO')
             time.sleep(1)
             continue
@@ -19,65 +19,65 @@ def new_game():
             break
     
     #Cria o tabuleiro de frotas do jogador 1
-    tabuP1 = tabuleiro()
-    tabuP1 = frotas(tabuP1, quantNavios)
+    boardTP1 = boards()
+    boardTP1 = fleets(boardTP1, numberShips)
     #Cria o tabuleiro de frotas do jogador 2
-    tabuP2 = tabuleiro()
-    tabuP2 = frotas(tabuP2, quantNavios)
+    boardTP2 = boards()
+    boardTP2 = fleets(boardTP2, numberShips)
     #Cria o tabuleiro que vai ser exibido para os jogadores
-    tabuP11 = tabuleiro()
-    tabuP22 = tabuleiro()
+    boardP1 = boards()
+    boardP2 = boards()
     #Pontuação dos jogadores 1 e 2
-    pontuacaoP1 = 0
-    pontuacaoP2 = 0
+    scoreP1 = 0
+    scoreP2 = 0
     #Contagem para indicar de quem a vez de jogada, onde (Ímpar = Jogador 1) e (PAR = Jogador 2) 
-    cont = 1
+    count = 1
     #Opção de para ativar a exibição do tabuleiro de frotas dos usuários (APENAS PARA TESTE)
-    teste = input(
+    test = input(
         'Deseja mostrar as frotas(Função de Teste)?[Sim ou Não] ').upper()
 
     while True:
         #Valida se deve ser exibido o tabuleiro de frotas ou não
-        if teste == 'SIM':
-            printJogo(tabuP11, tabuP22, pontuacaoP1, pontuacaoP2)
-            printTeste(tabuP1, tabuP2)
+        if test == 'SIM':
+            print_game(boardP1, boardP2, scoreP1, scoreP2)
+            print_test(boardTP1, boardTP2)
         else:
-            printJogo(tabuP11, tabuP22, pontuacaoP1, pontuacaoP2)
+            print_game(boardP1, boardP2, scoreP1, scoreP2)
         print()
 
         #Testa se algum dos jogadores já ganhou a partida
-        if pontuacaoP1 == quantNavios:
+        if scoreP1 == numberShips:
             print('JOGADOR 1 GANHOU!!')
             time.sleep(10)
             break
-        elif pontuacaoP2 == quantNavios:
+        elif scoreP2 == numberShips:
             print('JOGADOR 2 GANHOU!!')
             time.sleep(10)
             break
         
         #Verifica de quem é a vez de jogada
-        if cont % 2 != 0:
+        if count % 2 != 0:
             print('-Jogador 1-')
             
             #Pega qual linha e coluna o jogador escolheu para atacar
-            linha, coluna = tiro()
+            line, column = shot()
 
             #Verifica se o jogador acertou um navio
-            if resul_tiro(tabuP2, tabuP22, linha, coluna):
-                pontuacaoP1 += 1
+            if result_shot(boardTP2, boardP2, line, column):
+                scoreP1 += 1
             else:
-                cont += 1
+                count += 1
         else:
             print('-Jogador 2-')
 
             #Pega qual linha e coluna o jogador escolheu para atacar
-            linha, coluna = tiro()
+            line, column = shot()
 
             #Verifica se o jogador acertou um navio
-            if resul_tiro(tabuP1, tabuP11, linha, coluna):
-                pontuacaoP2 += 1
+            if result_shot(boardTP1, boardP1, line, column):
+                scoreP2 += 1
             else:
-                cont += 1
+                count += 1
 
 
 

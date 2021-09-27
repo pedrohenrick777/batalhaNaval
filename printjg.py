@@ -1,24 +1,25 @@
 import os
 
+#{{Pedro P.}}
 #Função que exibe o tabuleiro de frotas(TESTE)
-def printTeste(t1, t2):
+def print_test(tabTP1, tabTP2):
 
     print()
-    print_mapa(t1, t2)#Printa o tabuleiro de frota do Jogador 1 e Jogador 2
+    print_map(tabTP1, tabTP2)#Printa o tabuleiro de frota do Jogador 1 e Jogador 2
 
 #Função que exibe os tabuleiros de jogo
-def printJogo(t11, t22, pontuacaoP1, pontuacaoP2):
-    limpar_tela()
+def print_game(tabP1, tabP2, scoreP1, scoreP2):
+    clean_screen()
 
-    print_mapa(t11, t22)#Printa o tabuleiro do Jogador 1 e Jogador 2
+    print_map(tabP1, tabP2)#Printa o tabuleiro do Jogador 1 e Jogador 2
     print()
     #Exibe a pontuação dos jogadores
     print(f'''
-    Pontuação P1 = {pontuacaoP1}
-    Pontuação P2 = {pontuacaoP2}''')
+    Pontuação Jogador 1 = {scoreP1}
+    Pontuação Jogador 2 = {scoreP2}''')
 
 #Função que printa os tabuleiros
-def print_mapa(tab, tabu):
+def print_map(tab1, tab2):
     #Vetor usado para indicar qual é a linha do tabuleiro
     abcd = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J']
 
@@ -31,18 +32,18 @@ def print_mapa(tab, tabu):
     for i in range(10):
         print(f'{abcd[i]}  |', end='')
         for j in range(10):
-            print(f'{tab[i][j]:3}', end='')
+            print(f'{tab1[i][j]:3}', end='')
         print(end='       ')
 
         print(f'{abcd[i]}  |', end='')
         for k in range(10):
-            print(f'{tabu[i][k]:3}', end='')
+            print(f'{tab2[i][k]:3}', end='')
         print()
 
 
 
 #Função para limpar a tela
-def limpar_tela():
+def clean_screen():
     """ 
     Testa se o sistema é windows(nt), se sim, executa o comando cls(Limpa o CMD), se não, executa 
     o respectivo comando para Unix (clear)

@@ -1,21 +1,21 @@
-from printjg import limpar_tela
+from printjg import clean_screen
 from jogo import new_game
 import time
 
-
+#{{Pedro H.}}
 while True:
     #limpar terminal
-    limpar_tela()
+    clean_screen()
 
     print('''
         Novo Jogo[1]
         Fechar [2]
     ''')
     #Inicia um novo jogo ou fecha o jogo
-    nv = int(input(''))
-    if nv == 1:
+    newG = int(input(''))
+    if newG == 1:
         new_game()
-    elif nv == 2:
+    elif newG == 2:
         print('Programa Encerrado')
         break
     else:
