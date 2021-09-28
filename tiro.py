@@ -14,7 +14,7 @@ def shot():
     #Pergunta e valida a coluna do ataque
     while True:
         column = int(input('Qual coluna do seu ataque? '))
-        if column < 0 or column > 10:
+        if column <= 0 or column > 10:
             print('ERRO')
             continue
         else:
