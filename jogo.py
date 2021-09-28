@@ -33,8 +33,13 @@ def new_game():
     #Contagem para indicar de quem a vez de jogada, onde (Ímpar = Jogador 1) e (PAR = Jogador 2) 
     count = 1
     #Opção de para ativar a exibição do tabuleiro de frotas dos usuários (APENAS PARA TESTE)
-    test = input(
-        'Deseja mostrar as frotas(Função de Teste)?[Sim ou Não] ').upper()
+    while True:
+        test = input('Deseja mostrar as frotas(Função de Teste)?[Sim ou Nao] ').upper()
+        if test != 'SIM' and test != 'NAO':
+            print('ERRO')
+            continue
+        else:
+            break
 
     while True:
         #Valida se deve ser exibido o tabuleiro de frotas ou não
