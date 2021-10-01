@@ -9,6 +9,10 @@ Grupo:
 * Pedro Paulo
 * Olivia Oliva
 
+## Jogar online
+
+Para jogar online [clique aqui](https://replit.com/@PedroHenrick3/batalhaNaval#main.py)
+
 ## Instalar python
 
 É necessário ter o python instalado no computador, para verificar se você já tem, abra o <br>
