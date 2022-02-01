@@ -4,10 +4,9 @@ Jogo de batalha naval feito em python para o Projeto Final da Matéria de Algori
 
 Grupo: 
 
-* Pedro Henrick Queiroz alves
-* Manoel Pedro
-* Pedro Paulo
-* Olivia Oliva
+* [Manoel Pedro](https://www.linkedin.com/in/manoel-pedro-alexandre-834150208/)
+* [Pedro Paulo](https://www.linkedin.com/in/pedro-paulo-cantalice-7985b3223/)
+* [Olivia Oliva](https://www.linkedin.com/in/olivia-da-costa-oliva-2a5956208/)
 
 ## Jogar online
 
